@@ -1,0 +1,23 @@
+//MAIN STYLESSS................................
+.products {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 53px;
+    .product {
+        flex: 1;
+        margin: 1rem;
+    }
+}
+
+@media only screen and(max-width: 768px) {
+    .products {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        align-content: center;
+    }
+}

@@ -1,0 +1,36 @@
+//FORM
+label {
+    display: block;
+}
+
+input {
+    width: 500px;
+    height: 30px;
+    outline: none;
+    border: 1px solid #b1a7a7;
+    border-radius: 5px;
+    margin: 1rem;
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+.login {
+    display: flex;
+    height: 600px;
+    background: #ffffff;
+    justify-content: center;
+    margin-top: 65px;
+}
+
+//MOBILE DEVICE.................................
+@media only screen and (max-width: 768px) {
+    input {
+        width: 300px;
+    }
+    .login {
+        margin-top: 40px;
+        margin-left: 10px;
+    }
+}

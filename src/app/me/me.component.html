@@ -1,0 +1,21 @@
+<app-header *ngIf="!admin">
+</app-header>
+<div class="container mt-5 text-center">
+    <div class="row">
+        <div class="col-md-12">
+            <div *ngIf="user" class="user">
+                <p><i class="fas fa-user fa-3x"></i></p>
+                <p class="lead">Name:{{user.name}}</p>
+                <p class="lead">Email:{{user.email}}</p>
+
+            </div>
+
+            <div class="error" *ngIf="err">
+                <div class="lead">{{err}}</div>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>

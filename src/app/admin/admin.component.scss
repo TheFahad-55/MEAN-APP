@@ -1,0 +1,16 @@
+.side {
+    position: relative;
+    left: 70px;
+}
+
+.cross {
+    margin-left: 240px;
+    color: black;
+}
+
+//Mobile Devies................................................................
+@media only screen and (min-width: 1500px) {
+    .cross {
+        margin-left: 400px;
+    }
+}

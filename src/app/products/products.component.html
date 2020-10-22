@@ -1,0 +1,47 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 mt-3">
+            <p class="lead text-center">These Are All The Products Listings .</p>
+            <div class="products" *ngIf="products.length>0 &&!isLoading">
+                <div class="product" *ngFor="let product of products;let index=index">
+                    <div class="card mb-3" style="max-width: 440px;height:auto">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{product.imagePath}}" alt="{{product.title}}" style="width:120px;height:180px">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Name:{{product.title}}</h5>
+                                    <p #unique style="visibility:hidden;font-size: 4px;">{{index}}</p>
+                                    <h5 class="card-title">Category:{{product.category.name}}</h5>
+                                    <p class="card-text"><small class="text-muted">${{product.price}}</small></p>
+                                    <button class="btn btn-lg btn-danger" (click)="onAddToCart(unique)">Add To Cart</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="container text-center" *ngIf="products.length<1 &&!isLoading">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="lead">No Products Found</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spinner text-center" *ngIf="isLoading">
+                <app-spinner></app-spinner>
+            </div>
+
+        </div>
+    </div>
+</div>

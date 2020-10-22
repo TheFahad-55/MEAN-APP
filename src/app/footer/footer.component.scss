@@ -1,0 +1,34 @@
+.footer {
+    width: 100vw;
+    height: 10vh;
+    background: white;
+    margin-top: 180px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.icon {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+}
+
+.icon2 {
+    color: black;
+}
+
+.icon2:hover {
+    color: #fdc539;
+}
+
+//Mobile Devicess.
+@media only screen and (max-width:768px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

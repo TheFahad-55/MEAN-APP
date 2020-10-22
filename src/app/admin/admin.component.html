@@ -1,0 +1,13 @@
+<app-sidebar></app-sidebar>
+<a type="button" class="cross mt-3" (click)="onCloseSidebar()" *ngIf="cross"><i class="fas fa-times"></i></a>
+<a style="color: black;margin-left:200px" type="button" class="side mt-3" (click)="onSidebar()" *ngIf="burger"><i class="fas fa-bars fa-2x"></i></a>
+
+
+<div class="row">
+    <div class="col-md-12">
+
+        <router-outlet></router-outlet>
+
+
+    </div>
+</div>

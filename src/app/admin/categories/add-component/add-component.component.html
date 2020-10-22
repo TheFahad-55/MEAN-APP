@@ -1,0 +1,23 @@
+<div class="spinner text-center" *ngIf="isLoading">
+    <app-spinner></app-spinner>
+</div>
+
+<div class="container text-center" *ngIf="!error &&!isLoading">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="categories">
+                <div class="category">
+                    <form (ngSubmit)="onAddCategory(f)" #f="ngForm">
+                        <p class="lead mb-5">Add The Main Category That Will Reside All Common Products.</p>
+                        <div class="form-stuff">
+                            <label for="name">Category Name</label>
+                            <input type="text" name="name" id="name" ngModel required>
+                        </div>
+                        <button class="btn btn-sm btn-danger" [disabled]="f.invalid">Add Category</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,37 @@
+<div class="spinner text-center mt-5" *ngIf="isLoading">
+    <app-spinner></app-spinner>
+
+</div>
+
+<div class="error text-center" *ngIf="error &&!isLoading">
+    <p class="lead" style="color:red">{{error}}</p>
+
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 ">
+            <p class="lead text-center mt-5">These Are All The Categories That Are Being Displayed In Store.Manage Them</p>
+            <a style="text-decoration: underline;color: black" [routerLink]="['/admin/add-category']">Add New Category</a>
+            <div class="categories " *ngIf="categories.length>0 &&!isLoading &&!error">
+                <!--Category-->
+                <div class="category" *ngFor="let category of categories;let index=index">
+                    <div class="card mt-5 ml-5 text-center" style="max-width: 720px;height: 190px;">
+                        <p style="font-size:1px;visibility: hidden;" #id>{{index}}</p>
+                        <h5 class="card-header">{{category.name}}</h5>
+                        <div class="card-body">
+                            <button class="btn btn-sm btn-danger mb-3" (click)="onDeleteCategory(id)">Delete Category</button> <br>
+                            <button class="btn btn-sm btn-danger" (click)="onUpdateCategory(id)">Update Category</button>
+                        </div>
+                    </div>
+                </div>
+                <!--Category-->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="not-found text-center mt-5" *ngIf="categories.length<1 &&!error &&!isLoading">
+    <p class="lead">No Categories Found</p>
+
+</div>

@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="cart" *ngIf="cart.length>0">
+                <div class="products" *ngFor="let product of cart">
+                    <div class="card mb-3" style="max-width: 640px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{product.imagePath}}" alt="{{product.title}}" style="width:140px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Product Title:{{product.title}}</h5>
+                                    <h5 class="card-title">Product Category:{{product.category.name}}</h5>
+                                    <p class="card-text">Details:{{product.description}}</p>
+                                    <p class="card-text"><small class="text-muted">${{product.price}}</small></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ship text-center" *ngIf="cart.length>0">
+    <button class="btn btn-lg btn-danger text-center" (click)="onAddToShip()">Ship</button>
+</div>
+
+<div class="no-items text-center mt-5" *ngIf="cart.length<1">
+    <p class="lead">No Products Added </p>
+</div>

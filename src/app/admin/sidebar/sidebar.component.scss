@@ -1,0 +1,38 @@
+//Main Styles..
+a,
+p {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.sidebar {
+    top: 0;
+    background: #4e73df;
+    position: absolute;
+    width: 15vw;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a.active {
+    color: white;
+    border-bottom: 1px solid #fff;
+}
+
+//Mobile Servicess................................................................
+@media only screen and (max-width:768px) {
+    .sidebar {
+        top: 0;
+        background: #4e73df;
+        position: absolute;
+        width: 35vw;
+        left: -50vw;
+        height: 100vh;
+        z-index: 1000;
+    }
+}

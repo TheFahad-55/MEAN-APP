@@ -1,0 +1,23 @@
+<div class="header">
+    <nav class="navbar navbar-expand-sm bg-secondary navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand ml-2" [routerLink]="['/']">Shooping Fiesta</a>
+            <button class="navbar-toggler mr-1" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+    </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link ml-3 " aria-current="page" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+                    <a class="nav-link ml-3 " aria-current="page" [routerLink]="['/signup']" routerLinkActive="active" *ngIf="!login">SignUp</a>
+                    <a class="nav-link ml-3 " aria-current="page" [routerLink]="['/login']" routerLinkActive="active" *ngIf="!login">Login</a>
+                    <a class="nav-link ml-3 " aria-current="page" [routerLink]="['/products']" routerLinkActive="active" *ngIf="login">Products</a>
+                    <a class="nav-link ml-3 " aria-current="page" [routerLink]="['/cart']" routerLinkActive="active" *ngIf="login"><i class="fas fa-shopping-cart"></i>  <span style="color:#8cb90f">{{total}}</span></a>
+                    <a class="nav-link ml-3 " aria-current="page" [routerLink]="['/logout']" routerLinkActive="active" *ngIf="login">Logout</a>
+                    <a class="nav-link ml-3 " aria-current="page" [routerLink]="['/me']" routerLinkActive="active" *ngIf="login">{{name}}<i class="far fa-user"></i></a>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

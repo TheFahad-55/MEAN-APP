@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 ">
+            <p class="lead text-center mt-5">These Are All The Products That Are Being Displayed In Store.Manage Them</p>
+            <div class="products" *ngIf="products.length>0 &&!isLoading">
+                <div class="product" *ngFor="let product of products;let index=index">
+                    <div class="card mt-5 mr-3" style="max-width: 440px;height:auto">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="{{product.imagePath}}" alt="{{product.title}}" style="width:140px;">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Name:{{product.title}}</h5>
+                                    <p #unique style="visibility:hidden;font-size: 4px;">{{index}}</p>
+                                    <h5 class="card-title">Category:{{product.category.name}}</h5>
+                                    <p class="card-text"><small class="text-muted">${{product.price}}</small></p>
+                                    <button class="btn btn-sm btn-danger mr-5 mb-3">Delete Product</button>
+                                    <button class="btn btn-sm btn-danger">Update Product</button>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="container text-center" *ngIf="products.length<1 &&!isLoading">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="lead">No Products Found</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="spinner text-center" *ngIf="isLoading">
+                <app-spinner></app-spinner>
+            </div>
+
+        </div>
+    </div>
+</div>
